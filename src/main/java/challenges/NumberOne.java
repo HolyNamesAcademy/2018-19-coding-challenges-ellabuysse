@@ -19,6 +19,13 @@ public class NumberOne {
      */
     public int[] findTwoValuesThatSumToTarget(int[] numbers, int target) {
         // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+        int[] solutions = new int[2];
+        for(int i = 0; i < numbers.length; i++){
+            for(int n = i+1; n < numbers.length; n++) {
+                if (numbers[i] + numbers[n] == target) {
+                    solutions[0] = i;
+                    solutions[1] = n;
+                }
+            }
     }
-}
+    return solutions;}}

@@ -23,6 +23,19 @@ public class NumberTwo {
      */
     public boolean evenlySpaced(int a, int b, int c){
         // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
-    }
-}
+        int min = Math.min(Math.min(a,b), c);
+        int max = Math.max(Math.max(a,b), c);
+        int med = a;
+        if((min == a || min == b) && (max == a || max == b))
+            med = c;
+        if((min == a || min == c) && (max == a || max == c))
+            med = b;
+        if((min == b || min == c) && (max == b || max == c))
+            med = a;
+
+        if(max - med == med - min) {
+            return true;
+        }
+        return false;
+
+}}
