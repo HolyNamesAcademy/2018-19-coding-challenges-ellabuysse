@@ -34,20 +34,18 @@ public class NumberFive {
         // Delete the line below and implement the method!
         if(word1.length() != word2.length())
             return false;
+        word1 = word1.toLowerCase();
+        word2 = word2.toLowerCase();
         int[] one = new int[word1.length()];
         int[] two = new int[word2.length()];
         for(int i = 0; i < word1.length(); i++){
             one[i] = word1.charAt(i);
-            Character.toLowerCase(one[i]);
-            two[i] = word2.charAt(i);
-            Character.toLowerCase(two[i]);}
-            Arrays.sort(one);
+            two[i] = word2.charAt(i);}
+        Arrays.sort(one);
         Arrays.sort(two);
-        if(one == two)
-            return true;
-        return false;
-
-
-
+        for(int i = 0; i < word1.length(); i++){
+            if(one[i] != two[i])
+                return false;}
+        return true;
     }
 }
