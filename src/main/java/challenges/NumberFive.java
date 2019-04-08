@@ -1,6 +1,8 @@
 package challenges;
+import java.util.Arrays;
 
 public class NumberFive {
+
 
     /**
      * Two strings, word1 and word2, are called anagrams if they contain all the same characters in the same
@@ -30,6 +32,22 @@ public class NumberFive {
      */
     public boolean isAnagram(String word1, String word2) {
         // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+        if(word1.length() != word2.length())
+            return false;
+        int[] one = new int[word1.length()];
+        int[] two = new int[word2.length()];
+        for(int i = 0; i < word1.length(); i++){
+            one[i] = word1.charAt(i);
+            Character.toLowerCase(one[i]);
+            two[i] = word2.charAt(i);
+            Character.toLowerCase(two[i]);}
+            Arrays.sort(one);
+        Arrays.sort(two);
+        if(one == two)
+            return true;
+        return false;
+
+
+
     }
 }

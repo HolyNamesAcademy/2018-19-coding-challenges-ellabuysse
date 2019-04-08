@@ -14,16 +14,12 @@ public class NumberFour {
      */
     public int[] leftRotation(int[] input, int rotations) {
         // Delete the line below and implement the method!
-        while(rotations > 0)
-            input[input.length-1] = input[0];
-            for(int i = 0; i < input.length-1; i++) {
-                for (int n = 1; n < input.length-1; n++) {
-                    input[i] = input[n];
-                }
-            }
-
-            rotations--;
-        return input;
-
-    }
-}
+        int[] output = new int[input.length];
+        while(rotations > 0){
+            int lastValue = input[0];
+            for (int i = 0; i < input.length -1; i++) {
+                output[i] = input[i+1];}
+            output[input.length-1] = lastValue;
+            input = output;
+            rotations--;}
+        return output;}}
